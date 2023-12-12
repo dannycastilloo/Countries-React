@@ -3,6 +3,7 @@ import { client, DisplayLocations } from '../hooks/displayLocations'
 import { CountryCard } from "../components/CountryCard"
 import { ApolloProvider } from '@apollo/client'
 
+
 export const HomeView = () => {
   return (
     <>
