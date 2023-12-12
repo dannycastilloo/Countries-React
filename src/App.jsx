@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { Sidebar } from './components/SideBar'
+import { Sidebar } from './components/Sidebar'
 import { HomeView } from './screens/HomeView'
 import { DetailsView } from './screens/DetailsView'
 import { DannyView } from './screens/DannyView'
