@@ -1,0 +1,38 @@
+@import '../../App.css';
+
+aside {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 250px;
+    background-color: #1E1E1E;
+    top: 0%;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.nav-banner > img {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.nav-section {
+    display: flex;
+    padding: 30px 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-section:hover {
+    background-color: rgb(108, 108, 108);
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #eeeeee;
+    text-align: center;
+}
