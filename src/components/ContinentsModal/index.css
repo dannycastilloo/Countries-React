@@ -1,0 +1,15 @@
+.continents-container {
+    position: absolute; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    top: 44%;
+    left: 44%;
+    box-shadow: 0 0 10px rgba(43, 248, 255, 0.509);
+    padding: 30px 50px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 400px;
+}

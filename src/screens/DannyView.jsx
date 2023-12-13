@@ -1,7 +1,9 @@
+import { DannyBanner } from "../components/DannyBanner"
+
 export const DannyView = () => {
   return (
     <div className="main">
-      <h1>DannyView</h1>
+      <DannyBanner />
     </div>
   )
 }

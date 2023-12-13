@@ -5,41 +5,43 @@
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .country-card > img {
-    width: 350px;
-    height: 180px;
+    width: 380px;
+    height: 200px;
     border-radius: 10px 10px 0 0;
 }
 
 .country-bottom {
-    padding: 20px;
+    padding: 20px 30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .country-bottom > img {
-    width: 120px;
-    height: 60px;
+    width: 100px;
+    height: 50px;
     border-radius: 4px;
 }
 
 .country-data {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 190px;
 }
 
 .country-data > h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 0;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .country-data > span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
+    text-align: center;
 }

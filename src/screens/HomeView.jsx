@@ -1,14 +1,21 @@
 import { client } from '../hooks/useClient'
-
-import { CountryCard } from "../components/CountryCard"
+import { SearchBar } from '../components/SearchBar'
+import { CountryCard } from '../components/CountryCard'
+import { ContinentsModal } from '../components/ContinentsModal'
+import { Infobar } from '../components/Infobar'
 import { ApolloProvider } from '@apollo/client'
+
+
 
 export const HomeView = () => {
 
   return (
     <>
       <div className='main'>
-        <h1>HomeView</h1>
+        <h1>Welcome! 👋</h1>
+        <SearchBar />
+        <ContinentsModal />
+        <Infobar />
         <section>
           <div className="cards-container">
             <ApolloProvider client={client}>

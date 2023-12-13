@@ -1,0 +1,21 @@
+.continent-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.continent-card > img {
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continent-card > img:hover {
+    box-shadow: 0 0 10px rgba(43, 248, 255, 0.509);
+}
+
+.continent-card > h3 {
+    margin-top: 10px;
+    color: rgb(138, 138, 138);
+    font-size: 14px;
+    margin-left: 2px;
+}

@@ -18,9 +18,9 @@ aside {
     border-radius: 4px;
 }
 
-.nav-section {
+.nav-section * {
     display: flex;
-    padding: 30px 0;
+    height: 100px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -31,8 +31,28 @@ aside {
 }
 
 .nav-link {
-    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #eeeeee;
     text-align: center;
+}
+
+@media (width < 768px) {
+    aside {
+        flex-direction: row;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        padding-top: 0;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-banner > img {
+        display: none;
+    }
+
+    .nav-section {
+        padding: 0;
+        font-size: 12px;
+    }
 }
