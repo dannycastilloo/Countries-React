@@ -1,0 +1,54 @@
+.skeleton-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+}
+
+.skeleton-img {
+    width: 350px;
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+    background-color: rgb(186, 186, 186);
+}
+
+.skeleton-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: rgb(199, 199, 199);
+    width: 350px;
+    height: 100px;
+    border-radius: 0 0 10px 10px;
+}
+
+.skeleton-flag {
+    width: 120px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: rgb(179, 179, 179);
+}
+
+.skeleton-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skeleton-name {
+    width: 120px;
+    height: 25px;
+    background-color: rgb(179, 179, 179);
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.skeleton-continent {
+    width: 100px;
+    height: 16px;
+    background-color: rgb(179, 179, 179);
+    margin: 0 auto;
+    border-radius: 4px;
+}
