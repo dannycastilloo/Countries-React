@@ -1,3 +1,5 @@
+import './index.css'
+
 export const SkeletonCard = () => {
     return (
         <article className='skeleton-card'>
