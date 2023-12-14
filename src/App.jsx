@@ -14,9 +14,8 @@ function App() {
       <CountryProvider>
         <Sidebar />
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="*" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<HomeView />} />
+          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/" element={<HomeView />} />
           <Route path="/details" element={<DetailsView />} />
           <Route path="/danny" element={<DannyView />} />
         </Routes>

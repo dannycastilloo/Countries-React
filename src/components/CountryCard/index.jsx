@@ -11,7 +11,7 @@ export const CountryCard = ({ search }) => {
   if (loading || error) return <SkeletonCard />;
 
   const handleCardClick = (country) => {
-    context.setCountry({ ...country, languages: country.languages });
+    context.setCountry({ ...country, languages: country.languages, states: country.states });
   };
 
   return countryData.countries

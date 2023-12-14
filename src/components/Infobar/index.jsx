@@ -13,18 +13,21 @@ export const Infobar = () => {
             information-bar`}>
       <button>
         <img
-          src="../src/assets/x.svg"
+          src="./x.svg"
           alt="Cerrar"
           onClick={() => context.closeInfo()} />
       </button>
       <div>
-        {context.selectedCountry && context.selectedCountry.continent && (
+        {context.selectedCountry && context.selectedCountry.continent &&(
             <CountryInfo
               name={context.selectedCountry.name || 'N/A'}
               continent={context.selectedCountry.continent.name || 'N/A'}
               capital={context.selectedCountry.capital || 'N/A'}
               language={context.selectedCountry.languages || 'N/A'}
               currency={context.selectedCountry.currency || 'N/A'}
+              native={context.selectedCountry.native || 'N/A'}
+              phone={context.selectedCountry.phone || 'N/A'}
+              states={context.selectedCountry.states || 'N/A'}
             />
           )}
       </div>

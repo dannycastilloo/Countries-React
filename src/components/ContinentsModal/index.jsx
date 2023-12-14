@@ -12,7 +12,7 @@ export const ContinentsModal = () => {
              ${context.isContinentsModalOpen ? 'flex' : 'hidden'}`}>
             <button>
                 <img
-                    src="../src/assets/x.svg"
+                    src="./x.svg"
                     alt="Cerrar"
                     onClick={() => context.closeContinentsModal()} />
             </button>
@@ -21,19 +21,19 @@ export const ContinentsModal = () => {
 
                 <Continent
                     title='America'
-                    picture='../src/assets/continents/america.jpg' />
+                    picture='./continents/america.jpg' />
                 <Continent
                     title='Europe'
-                    picture='../src/assets/continents/europa.jpg' />
+                    picture='./continents/europa.jpg' />
                 <Continent
                     title='Asia'
-                    picture='../src/assets/continents/asia.jpg' />
+                    picture='./continents/asia.jpg' />
                 <Continent
                     title='Africa'
-                    picture='../src/assets/continents/africa.jpg' />
+                    picture='./continents/africa.jpg' />
                 <Continent
                     title='Oceania'
-                    picture='../src/assets/continents/oceania.jpg' />
+                    picture='./continents/oceania.jpg' />
             </div>
         </div>
 
