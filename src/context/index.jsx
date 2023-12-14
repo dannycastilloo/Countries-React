@@ -8,17 +8,22 @@ export const CountryProvider = ({ children }) => {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [isContinentsModalOpen, setIsContinentsModalOpen] = useState(false)
     const [selectedContinent, setSelectedContinent] = useState(null);
+    const [countryImages, setCountryImages] = useState([]);
 
     const openInfo = () => setIsInfoOpen(true)
     const closeInfo = () => setIsInfoOpen(false)
 
     const openContinentsModal = () => setIsContinentsModalOpen(true)
     const closeContinentsModal = () => setIsContinentsModalOpen(false)
-    
+
     const setCountry = (countryData) => {
         setSelectedCountry(countryData)
         openInfo()
     }
+
+    const setImages = (images) => {
+        setCountryImages(images);
+    };
 
     const contextValue = {
         isInfoOpen,
@@ -31,6 +36,8 @@ export const CountryProvider = ({ children }) => {
         closeContinentsModal,
         selectedContinent,
         setSelectedContinent,
+        countryImages,
+        setImages
     }
 
     return (

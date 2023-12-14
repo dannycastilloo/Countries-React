@@ -28,6 +28,7 @@ export const Infobar = () => {
               native={context.selectedCountry.native || 'N/A'}
               phone={context.selectedCountry.phone || 'N/A'}
               states={context.selectedCountry.states || 'N/A'}
+              image={context.countryImages[0] || 'N/A'}
             />
           )}
       </div>
