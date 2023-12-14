@@ -1,36 +1,38 @@
-.continents-container {
-    position: absolute; 
+.continents-modal {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    flex-direction: column;
     box-shadow: 0 0 10px rgba(43, 248, 255, 0.509);
-    padding: 30px 50px;
+    padding: 20px;
     border-radius: 25px;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(246, 246, 246);
     width: 400px;
+    margin: 0 auto;
 }
 
-.continents-container > button {
+.continents-modal > button {
     border: none;
-    top: 4%;
-    right: 2%;
     background-color: transparent;
-    position: fixed;
     border-radius: 40px;
     cursor: pointer;
+    margin-left: auto;
 }
 
-.continents-container > button:hover {
+.continents-modal > button:hover {
     background-color: rgba(128, 128, 128, 0.502);
 }
 
-.continents-container > button > img {
+.continents-modal > button > img {
     width: 25px;
+}
+
+.continents-container { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 350px;
+    margin-top: 10px;
 }
 
 .flex {

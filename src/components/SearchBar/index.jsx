@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { CountryContext } from '../../context'
 import './index.css'
 
@@ -13,10 +13,8 @@ export const SearchBar = ({ setSearch }) => {
           className='search-input'
           type="text"
           placeholder='Search country...'
-          onChange={(e) => setSearch(e.target.value)}/>
-        <button className='filter-button' onClick={() => context.openContinentsModal()}>
-          <img src="../src/assets/filter.svg" alt="" />
-        </button>
+          onChange={(e) => setSearch(e.target.value)}
+          onClick={() => context.openContinentsModal()}/>
       </div>
     </>
   )

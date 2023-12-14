@@ -8,6 +8,9 @@ const GET_COUNTRIES = gql`
             continent{name}
             languages{name}
             currency
+            native
+            phone
+            states{name}
         }
     }
 `

@@ -6,7 +6,7 @@ export const Sidebar = () => {
   return (
     <aside>
       <section className="nav-banner">
-        <img src="../src/assets/logo.png" alt="" />
+        <img src="./logo.png" alt="" />
       </section>
 
       <section className="nav-section">

@@ -20,12 +20,12 @@ export const CountryCard = ({ search }) => {
         ? item
         : item.name.toLowerCase().includes(search)
     })
-    .map(({ name, continent, capital, languages, currency }) => {
+    .map(({ name, continent, capital, languages, currency, native, phone, states }) => {
       return (
-        <article key={name} className='country-card' onClick={() => handleCardClick({ name, continent, capital, languages, currency })}>
-          <img src="../src/assets/united.jpg" alt="" />
+        <article key={name} className='country-card' onClick={() => handleCardClick({ name, continent, capital, languages, currency, native, phone, states })}>
+          <img src="./united.jpg" alt="" />
           <div className='country-bottom'>
-            <img src="../src/assets/flag.webp" alt="" />
+            <img src="./flag.webp" alt="" />
             <div className='country-data'>
               <h3>{name}</h3>
               <span>{continent.name}</span>
