@@ -42,3 +42,13 @@
 .hidden {
     display: none;
 }
+
+@media (width < 768px) {
+    .continents-modal {
+        width: 60%;
+    }
+
+    .continents-container { 
+        width: 100%;
+    }
+}

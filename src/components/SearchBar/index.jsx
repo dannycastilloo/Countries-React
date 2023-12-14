@@ -13,8 +13,11 @@ export const SearchBar = ({ setSearch }) => {
           className='search-input'
           type="text"
           placeholder='Search country...'
-          onChange={(e) => setSearch(e.target.value)}
-          onClick={() => context.openContinentsModal()}/>
+          onChange={(e) => {
+            setSearch(e.target.value);
+            context.setSearch && context.setSearch(e.target.value);
+          }}
+          onClick={() => context.openContinentsModal()} />
       </div>
     </>
   )

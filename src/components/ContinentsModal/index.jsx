@@ -1,16 +1,15 @@
-// ContinentsModal.js
-import { useContext } from 'react';
-import { CountryContext } from '../../context';
-import { Continent } from '../Continent';
-import './index.css';
+import { useContext } from 'react'
+import { CountryContext } from '../../context'
+import { Continent } from '../Continent'
+import './index.css'
 
 export const ContinentsModal = () => {
-  const context = useContext(CountryContext);
+  const context = useContext(CountryContext)
 
   const handleContinentSelect = (continent) => {
     context.setSelectedContinent(continent);
     context.closeContinentsModal();
-  };
+  }
 
   return (
     <div className={`continents-modal ${context.isContinentsModalOpen ? 'flex' : 'hidden'}`}>

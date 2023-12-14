@@ -1,22 +1,35 @@
-import { useContext, useEffect } from 'react';
-import { CountryContext } from '../../context';
-import useCountry from '../../hooks/useCountry';
-import { SkeletonCard } from '../SkeletonCard';
+import { useContext, useEffect, useState } from 'react'
+import { CountryContext } from '../../context'
+import useCountry from '../../hooks/useCountry'
+import { SkeletonCard } from '../SkeletonCard'
 import { useImage } from '../../hooks/useImage'
 
-import './index.css';
+import './index.css'
 
-export const CountryCard = ({ search, country }) => {
-  const context = useContext(CountryContext);
-  const { loading, error, data: countryData } = useCountry();
-  const images = useImage();
+export const CountryCard = ({ search }) => {
+  const context = useContext(CountryContext)
+  const { loading, error, data: countryData } = useCountry()
+  const images = useImage()
+  const [filteredCountries, setFilteredCountries] = useState([])
 
   useEffect(() => {
-    // Actualizar las imágenes en el contexto al cargar el componente
-    context.setImages(images);
-  }, [images, context]);
+    context.setImages(images)
+  }, [images, context])
 
-  if (loading || error) return <SkeletonCard />;
+  useEffect(() => {
+    if (countryData && countryData.countries) {
+      const filteredCountries = countryData.countries.filter((item) => {
+        const searchLowerCase = search ? search.toLowerCase() : '';
+        const matchesSearch = searchLowerCase === '' || item.name.toLowerCase().includes(searchLowerCase);
+        const matchesContinent = !context.selectedContinent || item.continent.name === context.selectedContinent;
+  
+        return matchesSearch && matchesContinent;
+      });
+      setFilteredCountries(filteredCountries);
+    }
+  }, [countryData, search, context.selectedContinent]);
+
+  if (loading || error) return <SkeletonCard />
 
   const handleCardClick = (country) => {
     context.setCountry({
@@ -24,14 +37,7 @@ export const CountryCard = ({ search, country }) => {
       languages: country.languages,
       states: country.states
     });
-  };
-
-  const filteredCountries = countryData.countries.filter((item) => {
-    const matchesSearch = search.toLowerCase() === '' || item.name.toLowerCase().includes(search);
-    const matchesContinent = !context.selectedContinent || item.continent.name === context.selectedContinent;
-
-    return matchesSearch && matchesContinent;
-  })
+  }
 
   return filteredCountries.map(({ name, continent, capital, languages, currency, native, phone, states }) => (
     <article

@@ -45,3 +45,37 @@
     font-size: 14px;
     text-align: center;
 }
+
+@media (width < 768px) {
+    .country-card {
+        width: 300px;
+    }
+
+    .country-card > img {
+        width: 300px;
+        height: 140px;
+    }
+
+    .country-bottom > img {
+        width: 80px;
+        height: 40px;
+    }
+
+    .country-bottom {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .country-data {
+        width: 150px;
+    }
+
+    .country-data > h3 {
+        font-size: 16px;
+    }
+    
+    .country-data > span {
+        font-size: 12px;
+        text-align: center;
+    }
+}
