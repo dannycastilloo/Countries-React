@@ -1,0 +1,26 @@
+.country-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.country-info > h3 {
+    color: rgb(43, 160, 255);
+    margin-right: auto;
+}
+
+.country-info > span {
+    text-align: end;
+}
+
+.country-region {
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-country-img {
+    width: 180px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+}

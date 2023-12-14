@@ -4,7 +4,10 @@ const GET_COUNTRIES = gql`
     query getCountries {
         countries {
             name
-            continent { name }
+            capital
+            continent{name}
+            languages{name}
+            currency
         }
     }
 `

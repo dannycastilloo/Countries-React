@@ -1,24 +1,31 @@
+import { useContext } from 'react';
+import { CountryContext } from '../../context';
 import useCountry from '../../hooks/useCountry';
-import { SkeletonCard } from '../SkeletonCard' 
-import './index.css'
+import { SkeletonCard } from '../SkeletonCard';
+import './index.css';
 
 export const CountryCard = () => {
+  const context = useContext(CountryContext);
+  const { loading, error, data: countryData } = useCountry();
 
-    const { loading, error, data } = useCountry()
+  if (loading || error) return <SkeletonCard />;
 
-    if (loading) return <SkeletonCard />
-    if (error) return <SkeletonCard />
+  const handleCardClick = (country) => {
+    context.setCountry({ ...country, languages: country.languages });
+  };
 
-    return data.countries.map(({ name, continent }) => (
-        <article key={name} className='country-card'>
-            <img src="../src/assets/united.jpg" alt="" />
-            <div className='country-bottom'>
-                <img src="../src/assets/flag.webp" alt="" />
-                <div className='country-data'>
-                    <h3>{name}</h3>
-                    <span>{continent.name}</span>
-                </div>
-            </div>
-        </article>
-    ));
-}
+  return countryData.countries.map(({ name, continent, capital, languages, currency }) => {
+    return (
+        <article key={name} className='country-card' onClick={() => handleCardClick({ name, continent, capital, languages, currency })}>
+        <img src="../src/assets/united.jpg" alt="" />
+        <div className='country-bottom'>
+          <img src="../src/assets/flag.webp" alt="" />
+          <div className='country-data'>
+            <h3>{name}</h3>
+            <span>{continent.name}</span>
+          </div>
+        </div>
+      </article>
+    );
+  });
+};

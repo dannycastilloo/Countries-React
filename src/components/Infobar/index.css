@@ -1,30 +1,38 @@
 .information-bar {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     width: 200px;
+    height: 100%;
     right: 10%;
     background-color: white;
-    padding: 20px;
+    padding: 80px 20px 20px 20px;
     border-radius: 10px;
+    color: black;
 }
 
-.country-info {
+.information-bar > button {
+    border: none;
+    top: 2%;
+    right: 11%;
+    background-color: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    position: fixed;
+}
+
+.information-bar > button:hover {
+    background-color: rgba(128, 128, 128, 0.502);
+}
+
+.information-bar > button > img {
+    width: 30px;
+}
+
+.flex {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
 }
 
-.country-info > h3 {
-    color: rgb(43, 160, 255);
-    margin-right: auto;
-}
-
-.country-info > span {
-    text-align: end;
-}
-
-.country-region {
-    display: flex;
-    flex-direction: column;
+.hidden {
+    display: none;
 }

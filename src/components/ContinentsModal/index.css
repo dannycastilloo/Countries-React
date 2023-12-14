@@ -3,8 +3,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    top: 44%;
-    left: 44%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: 0 0 10px rgba(43, 248, 255, 0.509);
     padding: 30px 50px;
     border-radius: 25px;
@@ -12,4 +13,30 @@
     align-items: center;
     background-color: white;
     width: 400px;
+}
+
+.continents-container > button {
+    border: none;
+    top: 4%;
+    right: 2%;
+    background-color: transparent;
+    position: fixed;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.continents-container > button:hover {
+    background-color: rgba(128, 128, 128, 0.502);
+}
+
+.continents-container > button > img {
+    width: 25px;
+}
+
+.flex {
+    display: flex;
+}
+
+.hidden {
+    display: none;
 }

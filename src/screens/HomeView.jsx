@@ -5,8 +5,6 @@ import { ContinentsModal } from '../components/ContinentsModal'
 import { Infobar } from '../components/Infobar'
 import { ApolloProvider } from '@apollo/client'
 
-
-
 export const HomeView = () => {
 
   return (
@@ -20,11 +18,8 @@ export const HomeView = () => {
           <div className="cards-container">
             <ApolloProvider client={client}>
               <CountryCard />
-              <CountryCard />
-              <CountryCard />
             </ApolloProvider>
           </div>
-
         </section>
       </div>
     </>

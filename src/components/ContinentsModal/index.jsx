@@ -1,9 +1,22 @@
+import { useContext } from 'react'
+import { CountryContext } from '../../context'
 import { Continent } from '../Continent'
 import './index.css'
 
 export const ContinentsModal = () => {
+
+    const context = useContext(CountryContext)
+
     return (
-        <div className='continents-container'>
+        <div
+            className={`continents-container
+                        ${context.isContinentsModalOpen ? 'flex' : 'hidden'}`}>
+            <button>
+                <img
+                    src="../src/assets/x.svg"
+                    alt="Cerrar"
+                    onClick={() => context.closeContinentsModal()} />
+            </button>
             <Continent
                 title='America'
                 picture='../src/assets/continents/america.jpg' />
