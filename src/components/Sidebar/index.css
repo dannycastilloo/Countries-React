@@ -1,5 +1,9 @@
 @import '../../App.css';
 
+.menu {
+    display: none;
+}
+
 aside {
     display: flex;
     flex-direction: column;
@@ -11,7 +15,7 @@ aside {
     padding-top: 20px;
 }
 
-.nav-banner > img {
+.nav-banner>img {
     width: 150px;
     display: block;
     margin: 20px auto;
@@ -37,22 +41,27 @@ aside {
 }
 
 @media (width < 768px) {
-    aside {
-        flex-direction: row;
-        height: 50px;
-        width: 100%;
-        align-items: center;
-        padding-top: 0;
-        justify-content: center;
-        gap: 20px;
+    .menu {
+        display: block;
+        position: absolute;
+        top: 2%;
+        left: 4%;
+        cursor: pointer;
     }
 
-    .nav-banner > img {
+    aside {
         display: none;
     }
 
-    .nav-section {
-        padding: 0;
-        font-size: 12px;
+    aside>span {
+        text-align: end;
+        color: #eeeeee;
+        font-size: 32px;
+        margin-right: 10%;
+        cursor: pointer;
+    }
+
+    aside.visible {
+        display: flex;
     }
 }

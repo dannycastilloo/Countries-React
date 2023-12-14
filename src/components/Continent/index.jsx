@@ -6,8 +6,8 @@ export const Continent = ({ title, picture }) => {
   const context = useContext(CountryContext)
 
   const handleContinentClick = () => {
-    context.setSelectedContinent(title);
-  };
+    context.setSelectedContinent(title)
+  }
 
   return (
     <div className='continent-card' onClick={handleContinentClick}>

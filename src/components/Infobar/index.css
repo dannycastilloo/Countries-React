@@ -4,17 +4,18 @@
     flex-direction: column;
     width: 200px;
     height: 100%;
-    right: 10%;
+    right: 0%;
     background-color: white;
     padding: 80px 20px 20px 20px;
     border-radius: 10px;
     color: black;
+    box-shadow: 0 0 10px rgba(79, 79, 79, 0.6);
 }
 
 .information-bar > button {
     border: none;
     top: 2%;
-    right: 11%;
+    right: 1%;
     background-color: transparent;
     border-radius: 40px;
     cursor: pointer;
@@ -35,4 +36,10 @@
 
 .hidden {
     display: none;
+}
+
+@media (width < 768px) {
+    .information-bar {
+        justify-content: start;
+    }
 }

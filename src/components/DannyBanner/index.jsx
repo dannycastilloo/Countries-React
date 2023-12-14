@@ -36,6 +36,7 @@ export const DannyBanner = () => {
                     <img className='photo' src='./extra/danny.png' alt="Danny Castillo" />
                 </div>
             </div>
+            <h3 className='mensaje'>Espero que tu experiencia en este sitio haya sido agradable 🙌</h3>
         </>
     )
 }

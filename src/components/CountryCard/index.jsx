@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CountryContext } from '../../context';
 import useCountry from '../../hooks/useCountry';
 import { SkeletonCard } from '../SkeletonCard';
@@ -6,29 +6,29 @@ import { useImage } from '../../hooks/useImage';
 
 import './index.css';
 
-// ... (previous imports)
-
-export const CountryCard = ({ search, country }) => {
+export const CountryCard = ({ search }) => {
   const context = useContext(CountryContext);
-  const { loading, error, data: countryData } = useCountry();
-  const images = useImage();
+  const { loading, error, data: countryData } = useCountry()
+  const images = useImage()
 
-  context.setImages(images);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  if (loading || error) return <SkeletonCard />;
+  useEffect(() => {
+    // Move the state update to the useEffect
+    context.setImages(images);
+    // Update local state when images are loaded
+    setImagesLoaded(true);
+  }, [images, context]);
+
+  if (loading || error) return <SkeletonCard />
 
   const handleCardClick = (country) => {
     context.setCountry({
       ...country,
       languages: country.languages,
       states: country.states
-    });
-  };
-
-  const getImagesForCountry = (countryName) => {
-    const countryImages = context.countryImages.find(image => image.tags.toLowerCase().includes(countryName.toLowerCase()));
-    return countryImages ? countryImages.largeImageURL : ''; // Return empty string if no image is found
-  };
+    })
+  }
 
   const filteredCountries = countryData.countries.filter((item) => {
     const matchesSearch = search.toLowerCase() === '' || item.name.toLowerCase().includes(search);
