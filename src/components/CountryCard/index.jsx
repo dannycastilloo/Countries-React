@@ -4,7 +4,7 @@ import useCountry from '../../hooks/useCountry';
 import { SkeletonCard } from '../SkeletonCard';
 import './index.css';
 
-export const CountryCard = () => {
+export const CountryCard = ({ search }) => {
   const context = useContext(CountryContext);
   const { loading, error, data: countryData } = useCountry();
 
@@ -14,18 +14,24 @@ export const CountryCard = () => {
     context.setCountry({ ...country, languages: country.languages });
   };
 
-  return countryData.countries.map(({ name, continent, capital, languages, currency }) => {
-    return (
+  return countryData.countries
+    .filter((item) => {
+      return search.toLowerCase() === ''
+        ? item
+        : item.name.toLowerCase().includes(search)
+    })
+    .map(({ name, continent, capital, languages, currency }) => {
+      return (
         <article key={name} className='country-card' onClick={() => handleCardClick({ name, continent, capital, languages, currency })}>
-        <img src="../src/assets/united.jpg" alt="" />
-        <div className='country-bottom'>
-          <img src="../src/assets/flag.webp" alt="" />
-          <div className='country-data'>
-            <h3>{name}</h3>
-            <span>{continent.name}</span>
+          <img src="../src/assets/united.jpg" alt="" />
+          <div className='country-bottom'>
+            <img src="../src/assets/flag.webp" alt="" />
+            <div className='country-data'>
+              <h3>{name}</h3>
+              <span>{continent.name}</span>
+            </div>
           </div>
-        </div>
-      </article>
-    );
-  });
+        </article>
+      );
+    });
 };
