@@ -7,8 +7,8 @@ export const ContinentsModal = () => {
   const context = useContext(CountryContext)
 
   const handleContinentSelect = (continent) => {
-    context.setSelectedContinent(continent);
-    context.closeContinentsModal();
+    context.setSelectedContinent(continent)
+    context.closeContinentsModal()
   }
 
   return (

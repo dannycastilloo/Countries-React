@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CountryContext } from '../../context'
 import { CountryInfo } from '../CountryInfo'
 import './index.css'
@@ -6,6 +6,8 @@ import './index.css'
 export const Infobar = () => {
 
   const context = useContext(CountryContext)
+
+  const selectedCountryImages = context.selectedCountryImages || [];
 
   return (
     <aside className={`
@@ -28,7 +30,8 @@ export const Infobar = () => {
               native={context.selectedCountry.native || 'N/A'}
               phone={context.selectedCountry.phone || 'N/A'}
               states={context.selectedCountry.states || 'N/A'}
-              image={context.countryImages[0] || 'N/A'}
+              placeImage={selectedCountryImages.placeImage?.largeImageURL || 'N/A'}
+            flagImage={selectedCountryImages.flagImage?.largeImageURL || 'N/A'}
             />
           )}
       </div>

@@ -1,7 +1,7 @@
 export const DetailsView = () => {
   return (
     <div className="main">
-      <h1>DetailsView</h1>
+      <h1>Detalles de la Prueba</h1>
       <div className="detalles">
         <ol>
           <li>Objetivo:

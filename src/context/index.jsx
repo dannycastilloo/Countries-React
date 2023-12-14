@@ -36,6 +36,7 @@ export const CountryProvider = ({ children }) => {
         closeContinentsModal,
         selectedContinent,
         setSelectedContinent,
+        setCountryImages,
         countryImages,
         setImages,
     }

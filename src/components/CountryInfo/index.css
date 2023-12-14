@@ -13,6 +13,32 @@
     text-align: end;
 }
 
+.country-presentation {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.country-presentation > img {
+    width: 65px;
+    height: 35px;
+    display: block;
+    margin: auto 10px;
+    border-radius: 4px;
+}
+
+.country-presentation-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.country-presentation-data > h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: rgb(43, 160, 255);
+}
+
 .country-region {
     display: flex;
     flex-direction: column;

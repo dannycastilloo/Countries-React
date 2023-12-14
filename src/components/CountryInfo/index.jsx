@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { CountryContext } from '../../context'
 import './index.css'
 
-export const CountryInfo = ({ name, continent, capital, currency, native, phone, image }) => {
+export const CountryInfo = ({ name, continent, capital, currency, native, phone, placeImage, flagImage }) => {
   const { selectedCountry } = useContext(CountryContext);
 
   const firstLanguageName = selectedCountry && selectedCountry.languages && selectedCountry.languages.length > 0 ? selectedCountry.languages[0].name : 'N/A';
@@ -13,13 +13,13 @@ export const CountryInfo = ({ name, continent, capital, currency, native, phone,
     <div>
       <img
         className='selected-country-img'
-        src={image?.largeImageURL}
-        alt="" />
-      <article>
-        <img src="../src/assets/flag" alt="" />
-        <div>
+        src={placeImage}
+        alt={name} />
+      <article className='country-presentation'>
+        <img src={flagImage} alt={name} />
+        <div className='country-presentation-data'>
           <h3>{name}</h3>
-          <span>{continent.name}</span>
+          <span>{continent}</span>
         </div>
       </article>
       <div className='country-info'>
