@@ -7,6 +7,7 @@ export const CountryProvider = ({ children }) => {
     const [isInfoOpen, setIsInfoOpen] = useState(false)
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [isContinentsModalOpen, setIsContinentsModalOpen] = useState(false)
+    const [selectedContinent, setSelectedContinent] = useState(null);
 
     const openInfo = () => setIsInfoOpen(true)
     const closeInfo = () => setIsInfoOpen(false)
@@ -28,6 +29,8 @@ export const CountryProvider = ({ children }) => {
         isContinentsModalOpen,
         openContinentsModal,
         closeContinentsModal,
+        selectedContinent,
+        setSelectedContinent,
     }
 
     return (

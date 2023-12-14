@@ -7,6 +7,11 @@ export const ContinentsModal = () => {
 
     const context = useContext(CountryContext)
 
+    const handleContinentSelect = (continent) => {
+        context.setSelectedContinent(continent);
+        context.closeContinentsModal();
+    };
+
     return (
         <div className={`continents-modal
              ${context.isContinentsModalOpen ? 'flex' : 'hidden'}`}>
@@ -21,19 +26,24 @@ export const ContinentsModal = () => {
 
                 <Continent
                     title='America'
-                    picture='./continents/america.jpg' />
+                    picture='./continents/america.jpg'
+                    onClick={() => handleContinentSelect('America')} />
                 <Continent
                     title='Europe'
-                    picture='./continents/europa.jpg' />
+                    picture='./continents/europa.jpg'
+                    onClick={() => handleContinentSelect('Europe')} />
                 <Continent
                     title='Asia'
-                    picture='./continents/asia.jpg' />
+                    picture='./continents/asia.jpg'
+                    onClick={() => handleContinentSelect('Asia')} />
                 <Continent
                     title='Africa'
-                    picture='./continents/africa.jpg' />
+                    picture='./continents/africa.jpg'
+                    onClick={() => handleContinentSelect('Africa')} />
                 <Continent
                     title='Oceania'
-                    picture='./continents/oceania.jpg' />
+                    picture='./continents/oceania.jpg'
+                    onClick={() => handleContinentSelect('Oceania')} />
             </div>
         </div>
 
