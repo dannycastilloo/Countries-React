@@ -33,7 +33,7 @@ export const DannyBanner = () => {
                     </div>
                 </div>
                 <div className='my-photo'>
-                    <img className='photo' src='./danny.png' alt="Danny Castillo" />
+                    <img className='photo' src='./extra/danny.png' alt="Danny Castillo" />
                 </div>
             </div>
         </>

@@ -13,7 +13,7 @@ export const Infobar = () => {
             information-bar`}>
       <button>
         <img
-          src="./x.svg"
+          src="./extra/x.svg"
           alt="Cerrar"
           onClick={() => context.closeInfo()} />
       </button>

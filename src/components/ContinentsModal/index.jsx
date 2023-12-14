@@ -16,7 +16,7 @@ export const ContinentsModal = () => {
     <div className={`continents-modal ${context.isContinentsModalOpen ? 'flex' : 'hidden'}`}>
       <button>
         <img
-          src="./x.svg"
+          src="./extra/x.svg"
           alt="Cerrar"
           onClick={() => context.closeContinentsModal()}
         />

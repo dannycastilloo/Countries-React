@@ -2,11 +2,14 @@ import { useContext } from 'react';
 import { CountryContext } from '../../context';
 import useCountry from '../../hooks/useCountry';
 import { SkeletonCard } from '../SkeletonCard';
+import { useImage } from '../../hooks/useImage'
+
 import './index.css';
 
-export const CountryCard = ({ search }) => {
+export const CountryCard = ({ search, country }) => {
   const context = useContext(CountryContext);
   const { loading, error, data: countryData } = useCountry();
+  const [placeImg, flagImg] = useImage(name)
 
   if (loading || error) return <SkeletonCard />;
 
@@ -22,10 +25,13 @@ export const CountryCard = ({ search }) => {
   })
 
   return filteredCountries.map(({ name, continent, capital, languages, currency, native, phone, states }) => (
-    <article key={name} className='country-card' onClick={() => handleCardClick({ name, continent, capital, languages, currency, native, phone, states })}>
-      <img src="./united.jpg" alt="" />
+    <article
+      key={name}
+      className='country-card'
+      onClick={() => handleCardClick({ name, continent, capital, languages, currency, native, phone, states })}>
+      {placeImg && <img src={placeImg.largeImageURL} alt="" />}
       <div className='country-bottom'>
-        <img src="./flag.webp" alt="" />
+      {flagImg && <img src={flagImg.largeImageURL} alt="" />}
         <div className='country-data'>
           <h3>{name}</h3>
           <span>{continent.name}</span>
