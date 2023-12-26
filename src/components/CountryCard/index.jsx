@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { CountryContext } from '../../context'
 import { SkeletonCard } from '../SkeletonCard'
 import { useQuery, gql } from '@apollo/client'
@@ -23,23 +23,27 @@ const GET_COUNTRIES = gql`
 export const CountryCard = ({ search, client }) => {
   const context = useContext(CountryContext)
   const { loading, error, data } = useQuery(GET_COUNTRIES, { client })
-  const countryImages = useCountryImages(data ? data.countries : [])
+  const { countryImages, isLoading } = useCountryImages(data ? data.countries : [])
+
+  if (isLoading) {
+    return <SkeletonCard />
+  }
 
   const handleCardClick = (country) => {
     context.setCountry({
       ...country,
       languages: country.languages.map(lang => lang.name),
       states: country.states.map(state => state.name),
-    });
-  };
+    })
+  }
 
   const filteredCountriesByName = countryImages.filter((country) =>
     country.name.toLowerCase().includes(search.toLowerCase())
-  );
+  )
 
   const filteredCountriesByContinent = filteredCountriesByName.filter((country) =>
     !context.selectedContinent || country.continent.name === context.selectedContinent
-  );
+  )
 
   return filteredCountriesByContinent.map(({ countryName, images, ...countryDetails }) => (
     <article

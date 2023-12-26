@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 export const useCountryImages = (countries) => {
-  const [countryImages, setCountryImages] = useState([]);
+  const [countryImages, setCountryImages] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const fetchImages = async (countryName) => {
       try {
-        const apiKey = '41223762-b5c29360eff2a9446660d1f1e';
+        const apiKey = '41223762-b5c29360eff2a9446660d1f1e'
         const responsePlace = await axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${countryName}&image_type=photo`)
         const responseFlag = await axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${countryName}+flag&image_type=photo`)
 
@@ -46,6 +47,7 @@ export const useCountryImages = (countries) => {
     };
 
     const fetchCountryImages = async () => {
+      setIsLoading(true)
       const imagesPromises = countries.map(async (country) => {
         const images = await fetchImages(country.name)
         return {
@@ -57,10 +59,11 @@ export const useCountryImages = (countries) => {
 
       const resolvedImages = await Promise.all(imagesPromises);
       setCountryImages(resolvedImages);
+      setIsLoading(false)
     }
 
     fetchCountryImages();
   }, [countries]);
 
-  return countryImages;
+  return { countryImages, isLoading };
 };
