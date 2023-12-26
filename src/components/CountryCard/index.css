@@ -8,6 +8,10 @@
     cursor: pointer;
 }
 
+.country-card:hover {
+    background-color: rgb(195, 232, 255);
+}
+
 .country-card > img {
     width: 380px;
     height: 200px;
